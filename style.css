@@ -1,223 +1,56 @@
 
 
 :root {
-  
-  --hour-height: 60px;   
-  --day-start: 8;        
-  --hours: 11;           
-  --hours-w: 64px;       
-  --tail: 1.5rem;        
-  --page-bg: #F5F8FE;    
+  --hour-height: 60px;
+  --day-start: 8;
+  --hours: 11;
+  --hours-w: 64px;
+  --head-h: 48px;
+  --tail: 1.5rem;
+  --ink: #14233B;
+  --muted: #5B6B85;
+  --page-bg: #F5F8FE;
   --surface: #FAFCFF;
-  --line: #D6E4F7;       
-  --cours-bg: #EAF2FF;
-  --cours-border: #BFD5F5;
-  --autre-bg: #DCE6F5;
+  --line: #D6E4F7;
+  --cours-bg: #EAF2FF;  --cours-border: #BFD5F5;  --cours-label: #2F62B5;
+  --autre-bg: #DCE6F5;  --autre-border: #B5C7E3;  --autre-label: #4A5F82;
+  --bs-body-bg: var(--surface);
 }
 
-
-body {
-  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-  background: var(--page-bg);
-  color: var(--ink);
-}
-
+body { font-family: "Manrope", system-ui, sans-serif; background: var(--page-bg); color: var(--ink); }
 .page-header { padding-block: 1.5rem 1rem; }
-.page-title { font-size: 1.5rem; font-weight: 800; margin: 0; }
+.page-title { font-size: clamp(1.25rem, 3vw, 1.5rem); font-weight: 800; margin: 0; }
 .page-subtitle { color: var(--muted); font-size: .9rem; }
-
-
-.schedule-scroll {
-  background: var(--surface);
-  border: 1px solid var(--line);
- 
-}
 .schedule-scroll:focus-visible { outline: 3px solid var(--cours-label); outline-offset: 2px; }
 
-.schedule-grid {
-  display: grid;
- 
-  grid-template-columns: var(--hours-w) repeat(6, minmax(0, 1fr));
-}
-
-
-.hours {
-  position: sticky;
-  left: 0;
-  z-index: 4;
-  background: var(--surface);
-  
-}
-.hours-corner {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  height: var(--head-h);
-  background: var(--surface);
-  border-bottom: 1px solid var(--line);
-}
-.hours-list li {
-  height: var(--hour-height);
-  padding: 4px .5rem 0 0;
-  text-align: right;
-  font-size: .75rem;
-  font-weight: 600;
-  color: var(--muted);
-}
-.hours-list {
-  display: flex;
-  flex-direction: column;
-  padding: 6px 0;
-}
-.hours-list li {
-  padding-right: .5rem;
-  text-align: right;
-  font-size: .75rem;
-  font-weight: 600;
-  color: var(--muted);
-}
-.hours-list li.hours-end { height: var(--tail); }
-
-
-.day {
-  position: relative;
-  min-width: 0;
-  border-left: 1px solid var(--line);
-  padding-bottom: var(--tail);
-}
-
-
-.day-head {
-  top: 0;
-  z-index: 3;
-  height: var(--head-h);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--surface);
-  border-bottom: 1px solid var(--line);
-}
-.day-head h2 {
-  margin: 0;
-  font-size: .85rem;
-  font-weight: 500;
-  color: var(--muted);
-}
-.day-name {
-  font-weight: 800;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-
-.day-events {
-  position: relative;
-  height: calc(var(--hours) * var(--hour-height));
- 
-}
+.day { min-width: 150px; border: 1px solid var(--line); border-radius: .5rem; overflow: hidden; }
+.day-name { font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 
 
 .event {
-  
-  position: absolute;
-  left: 4px;
-  right: 4px;
-  top: calc((var(--start) - var(--day-start)) * var(--hour-height));
-  height: calc((var(--end) - var(--start)) * var(--hour-height));
-  z-index: 1;
-
-  box-sizing: border-box;
-  overflow: hidden;
-  padding: .6rem .7rem;
-  border: 1px solid var(--card-border);
-  
-  background: var(--card-bg);
+  box-sizing: border-box; overflow: hidden; padding: .6rem .7rem;
+  border: 1px solid var(--card-border); border-radius: .5rem; background: var(--card-bg);
 }
 .event--cours { --card-bg: var(--cours-bg); --card-border: var(--cours-border); --card-label: var(--cours-label); }
 .event--autre { --card-bg: var(--autre-bg); --card-border: var(--autre-border); --card-label: var(--autre-label); }
-
-.event-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: .5rem;
-  margin-bottom: .35rem;
-}
-.event-label {
-  font-size: .68rem;
-  font-weight: 800;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  color: var(--card-label);
-}
-.event-time {
-  font-size: .75rem;
-  font-weight: 600;
-  color: var(--ink);
-  white-space: nowrap;
-}
-.event-title {
-  margin: 0 0 .35rem;
-  font-size: .95rem;
-  font-weight: 700;
-  line-height: 1.3;
-}
-.event-meta {
-  margin: 0;
-  font-size: .78rem;
-  color: var(--muted);
-}
-.event-meta .bi { margin-right: .25rem; }
+.event-top { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; margin-bottom: .35rem; }
+.event-label { font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--card-label); }
+.event-time { font-size: .75rem; font-weight: 600; white-space: nowrap; }
+.event-title { margin: 0 0 .35rem; font-size: .95rem; font-weight: 700; line-height: 1.3; }
+.event-meta { margin: 0; font-size: .78rem; color: var(--muted); }
 
 
-@media (min-width: 576px) and (max-width: 991.98px) {
-  .schedule-scroll {
-    overflow: auto;                    
-    max-height: 85vh;
-  }
-  .schedule-grid {
-    grid-template-columns: var(--hours-w) repeat(6, 150px);
-    min-width: calc(var(--hours-w) + 6 * 150px);
-  }
-  .hours { border-right: 1px solid var(--line); }  
-}
-
-
-@media (max-width: 575.98px) {
-  .page-title { font-size: 1.25rem; }
-
-  .schedule-scroll { background: transparent; border: 0; }
-  .schedule-grid { display: block; }
-  .hours { display: none; }            
-  .day {
-    border: 1px solid var(--line);
-    
-    background: var(--surface);
-    margin-bottom: 1rem;
-    padding-bottom: 0;
-  }
-  .day-head {
-    height: auto;
-    padding: .75rem 1rem;
-    justify-content: flex-start;
-   
-  }
-  .day-head h2 { font-size: .95rem; }
-
-  
-  .day-events {
-    height: auto;
-    background-image: none;
-    display: flex;
-    flex-direction: column;
-    gap: .75rem;
-    padding: .75rem;
-  }
+@media (min-width: 576px) {
+  .schedule-scroll { max-height: 85vh; background: var(--surface); border: 1px solid var(--line); }
+  .hours { width: var(--hours-w); }
+  .hours-corner, .day-head { height: var(--head-h); }
+  .hours-list li { height: var(--hour-height); }
+  .hours-list li.hours-end { height: var(--tail); }
+  .day { border-width: 0 0 0 1px; border-radius: 0; padding-bottom: var(--tail); }
+  .day-events { position: relative; height: calc(var(--hours) * var(--hour-height)); }
   .event {
-    position: static;
-    height: auto;
-    inset: auto;
-    width: 100%;
+    position: absolute; left: 4px; right: 4px;
+    top: calc((var(--start) - var(--day-start)) * var(--hour-height));
+    height: calc((var(--end) - var(--start)) * var(--hour-height));
   }
 }
