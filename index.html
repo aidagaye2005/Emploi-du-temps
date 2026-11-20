@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emploi du temps hebdomadaire</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  
+  <header class="container-fluid page-header">
+    <div class="row align-items-end g-2">
+      <div class="col-12 col-md">
+        <h1 class="page-title">Emploi du temps hebdomadaire</h1>
+        <p class="page-subtitle mb-0">DIC GIT</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container-fluid pb-4" aria-label="Emploi du temps hebdomadaire">
+
+    
+    <div class="schedule-scroll" role="region" aria-label="Calendrier de la semaine, du lundi au samedi" tabindex="0">
+      <div class="schedule-grid">
+        <div class="hours" aria-hidden="true">
+          <div class="hours-corner"></div>
+          <ol class="hours-list list-unstyled m-0">
+            <li><span>08:00</span></li>
+            <li><span>09:00</span></li>
+            <li><span>10:00</span></li>
+            <li><span>11:00</span></li>
+            <li><span>12:00</span></li>
+            <li><span>13:00</span></li>
+            <li><span>14:00</span></li>
+            <li><span>15:00</span></li>
+            <li><span>16:00</span></li>
+            <li><span>17:00</span></li>
+            <li><span>18:00</span></li>
+            <li class="hours-end"><span>19:00</span></li>
+          </ol>
+        </div>
+
+      
+        <section class="day" aria-labelledby="jour-lun">
+          <header class="day-head">
+            <h2 id="jour-lun"><span class="day-name">Lundi</span> </h2>
+          </header>
+          <div class="day-events">
+            <article class="event event--cours" style="--start: 8; --end: 12" aria-labelledby="ev-lun-1">
+              <div class="event-top">
+                <span class="event-label">Cours</span>
+                <span class="event-time"><time datetime="08:00">08:00</time> – <time datetime="12:00">12:00</time></span>
+              </div>
+              <h3 class="event-title" id="ev-lun-1">Techniques de communication en Anglais 1</h3>
+              <p class="event-meta"><i class="bi bi-person" aria-hidden="true"></i> Amadou Gallo FALL</p>
+              <p class="event-meta"><i class="bi bi-geo-alt" aria-hidden="true"></i> Salle B203</p>
+            </article>
+            <article class="event event--cours" style="--start: 15; --end: 19" aria-labelledby="ev-lun-2">
+              <div class="event-top">
+                <span class="event-label">Cours</span>
+                <span class="event-time"><time datetime="15:00">15:00</time> – <time datetime="19:00">19:00</time></span>
+              </div>
+              <h3 class="event-title" id="ev-lun-2">ACSI 2 (UML &amp; Design Patterns)</h3>
+              <p class="event-meta"><i class="bi bi-person" aria-hidden="true"></i> Abdoulaye GUISSE</p>
+              <p class="event-meta"><i class="bi bi-geo-alt" aria-hidden="true"></i> Salle B203</p>
+            </article>
+          </div>
+        </section>
+
+        
+        <section class="day" aria-labelledby="jour-mar">
+          <header class="day-head">
+            <h2 id="jour-mar"><span class="day-name">Mardi</span> </h2>
+          </header>
+          <div class="day-events">
+            <article class="event event--cours" style="--start: 8; --end: 12" aria-labelledby="ev-mar-1">
+              <div class="event-top">
+                <span class="event-label">Cours</span>
+                <span class="event-time"><time datetime="08:00">08:00</time> – <time datetime="12:00">12:00</time></span>
+              </div>
+              <h3 class="event-title" id="ev-mar-1">Recherche opérationnelle</h3>
+              <p class="event-meta"><i class="bi bi-person" aria-hidden="true"></i> Ahmed Mouhamadou WADE</p>
+              <p class="event-meta"><i class="bi bi-geo-alt" aria-hidden="true"></i> Salle B203</p>
+            </article>
+            
+            <article class="event event--cours" style="--start: 15; --end: 19" aria-labelledby="ev-mar-2">
+              <div class="event-top">
+                <span class="event-label">Cours</span>
+                <span class="event-time"><time datetime="15:00">15:00</time> – <time datetime="19:00">19:00</time></span>
+              </div>
+              <h3 class="event-title" id="ev-mar-2">ACSI 2 (UML &amp; Design Patterns)</h3>
+              <p class="event-meta"><i class="bi bi-person" aria-hidden="true"></i> Abdoulaye GUISSE</p>
+              <p class="event-meta"><i class="bi bi-geo-alt" aria-hidden="true"></i> Salle B203</p>
+            </article>
+          </div>
+        </section>
+
+        
+        <section class="day" aria-labelledby="jour-mer">
+          <header class="day-head">
+            <h2 id="jour-mer"><span class="day-name">Mercredi</span> </h2>
+          </header>
+          <div class="day-events">
+          
+            <article class="event event--cours" style="--start: 8; --end: 12" aria-labelledby="ev-mer-1">
+              <div class="event-top">
+                <span class="event-label">Cours</span>
+                <span class="event-time"><time datetime="08:00">08:00</time> – <time datetime="12:00">12:00</time></span>
+              </div>
+              <h3 class="event-title" id="ev-mer-1">UX Design (+intégration)</h3>
+              <p class="event-meta"><i class="bi bi-person" aria-hidden="true"></i> Samba SIDIBE</p>
+              <p class="event-meta"><i class="bi bi-geo-alt" aria-hidden="true"></i> Salle B203</p>
+            </article>
+            <article class="event event--autre" style="--start: 15; --end: 19" aria-labelledby="ev-mer-2">
+              <div class="event-top">
+                <span class="event-label">Autre</span>
+                <span class="event-time"><time datetime="15:00">15:00</time> – <time datetime="19:00">19:00</time></span>
+              </div>
+              <h3 class="event-title" id="ev-mer-2">TPE</h3>
+            </article>
+          </div>
+        </section>
+
+      
+        <section class="day" aria-labelledby="jour-jeu">
+          <header class="day-head">
+            <h2 id="jour-jeu"><span class="day-name">Jeudi</span> </h2>
+          </header>
+          <div class="day-events">
+            <article class="event event--autre" style="--start: 8; --end: 12" aria-labelledby="ev-jeu-1">
+              <div class="event-top">
+                <span class="event-label">Autre</span>
+                <span class="event-time"><time datetime="08:00">08:00</time> – <time datetime="12:00">12:00</time></span>
+              </div>
+              <h3 class="event-title" id="ev-jeu-1">TPE (séance en salle)</h3>
+            </article>
+            <article class="event event--autre" style="--start: 15; --end: 19" aria-labelledby="ev-jeu-2">
+              <div class="event-top">
+                <span class="event-label">Autre</span>
+                <span class="event-time"><time datetime="15:00">15:00</time> – <time datetime="19:00">19:00</time></span>
+              </div>
+              <h3 class="event-title" id="ev-jeu-2">TPE (séance en salle)</h3>
+            </article>
+          </div>
+        </section>
+
+
+        <section class="day" aria-labelledby="jour-ven">
+          <header class="day-head">
+            <h2 id="jour-ven"><span class="day-name">Vendredi</span> </h2>
+          </header>
+          <div class="day-events">
+            <article class="event event--cours" style="--start: 8; --end: 12" aria-labelledby="ev-ven-1">
+              <div class="event-top">
+                <span class="event-label">Cours</span>
+                <span class="event-time"><time datetime="08:00">08:00</time> – <time datetime="12:00">12:00</time></span>
+              </div>
+              <h3 class="event-title" id="ev-ven-1">Recherche opérationnelle</h3>
+              <p class="event-meta"><i class="bi bi-person" aria-hidden="true"></i> Ahmed Mouhamadou WADE</p>
+              <p class="event-meta"><i class="bi bi-geo-alt" aria-hidden="true"></i> Salle B203</p>
+            </article>
+            <article class="event event--cours" style="--start: 15; --end: 19" aria-labelledby="ev-ven-2">
+              <div class="event-top">
+                <span class="event-label">Cours</span>
+                <span class="event-time"><time datetime="15:00">15:00</time> – <time datetime="19:00">19:00</time></span>
+              </div>
+              <h3 class="event-title" id="ev-ven-2">UX Design (+intégration)</h3>
+              <p class="event-meta"><i class="bi bi-person" aria-hidden="true"></i> Samba SIDIBE</p>
+              <p class="event-meta"><i class="bi bi-geo-alt" aria-hidden="true"></i> Salle B203</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="day" aria-labelledby="jour-sam">
+          <header class="day-head">
+            <h2 id="jour-sam"><span class="day-name">Samedi</span> 
+            </h2>
+          </header>
+          <div class="day-events">
+            <article class="event event--cours" style="--start: 8; --end: 12" aria-labelledby="ev-sam-1">
+              <div class="event-top">
+                <span class="event-label">Cours</span>
+                <span class="event-time"><time datetime="08:00">08:00</time> – <time datetime="12:00">12:00</time></span>
+              </div>
+              <h3 class="event-title" id="ev-sam-1">PPP 1</h3>
+              <p class="event-meta"><i class="bi bi-person" aria-hidden="true"></i> Oumar NIANG</p>
+              <p class="event-meta"><i class="bi bi-geo-alt" aria-hidden="true"></i> Salle B203</p>
+            </article>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
